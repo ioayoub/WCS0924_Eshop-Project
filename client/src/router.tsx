@@ -15,6 +15,10 @@ export const mainRouter = createBrowserRouter([
         path: "/details",
         element: <DetailsPage />,
       },
+      {
+        path: "*",
+        element: <h1 className="text-4xl text-center my-12">Error 404</h1>,
+      },
     ],
   },
 ]);
