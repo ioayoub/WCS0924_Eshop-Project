@@ -8,9 +8,6 @@ export default function Navbar() {
         <li className="hover:underline hover:underline-offset-4">
           <NavLink to={"/"}>Accueil</NavLink>
         </li>
-        <li className="hover:underline hover:underline-offset-4">
-          <NavLink to={"/details"}>Détails</NavLink>
-        </li>
       </ul>
     </nav>
   );

@@ -1,8 +1,12 @@
+import { NavLink } from "react-router-dom";
 import { ArticleType } from "../lib/definitions";
 
 export default function ArticlesCard({ article }: { article: ArticleType }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <NavLink
+      to={`/details/${article.id}`}
+      className="max-w-sm rounded overflow-hidden shadow-lg"
+    >
       <img
         className="w-full"
         src={article.picture_resized}
@@ -17,6 +21,6 @@ export default function ArticlesCard({ article }: { article: ArticleType }) {
           {article.category}
         </span>
       </div>
-    </div>
+    </NavLink>
   );
 }

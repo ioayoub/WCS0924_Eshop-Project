@@ -3,6 +3,8 @@ import App from "./App";
 import DetailsPage from "./pages/DetailsPage";
 import HomePage from "./pages/HomePage";
 
+const API_URL = import.meta.env.VITE_API_ESHOP;
+
 export const mainRouter = createBrowserRouter([
   {
     element: <App />,
@@ -10,10 +12,12 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        loader: () => fetch(`${API_URL}`),
       },
       {
-        path: "/details",
+        path: "/details/:id",
         element: <DetailsPage />,
+        loader: ({ params }) => fetch(`${API_URL}/${params.id}`),
       },
       {
         path: "*",
